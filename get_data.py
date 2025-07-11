@@ -62,3 +62,23 @@ def get_camana_data(file_properties):
     df_wssp = get_relevant_columns(file_properties, df_wssp)
 
     return df_wssp
+
+def get_pedregal_data(file_properties):
+    real_sheet_name = get_matching_sheet_name(file_properties['source'], file_properties['sheet_name'])
+    df_wssp = pd.read_excel(file_properties['source'], sheet_name=real_sheet_name, header=None)
+
+    df_wssp = adjust_excel_data(df_wssp)
+
+    df_wssp = get_relevant_columns(file_properties, df_wssp)
+
+    return df_wssp
+
+def get_chala_data(file_properties):
+    real_sheet_name = get_matching_sheet_name(file_properties['source'], file_properties['sheet_name'])
+    df_wssp = pd.read_excel(file_properties['source'], sheet_name=real_sheet_name, header=None)
+
+    df_wssp = adjust_excel_data(df_wssp)
+
+    df_wssp = get_relevant_columns(file_properties, df_wssp)
+
+    return df_wssp
